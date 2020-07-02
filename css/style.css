@@ -1,0 +1,257 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../font/static/Inter-Bold-slnt=0.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter";
+}
+:root {
+  --color1: #f0f3fa;
+  --lime-green: hsl(163, 72%, 41%);
+  --bright-red: hsl(356, 69%, 56%);
+  --facebook: #168ef4;
+  --twitter: hsl(203, 89%, 53%);
+  --instagram-1: hsl(37, 97%, 70%);
+  --instagram-2: hsl(329, 70%, 58%);
+  --youTube: hsl(348, 97%, 39%);
+  --gray: #5f616d;
+  --cardGray: #f0f3fa;
+  --lightGray: #f8f9fe;
+  --cardTitle: #6f717e;
+  --baseBackground: white;
+  --baseColor: #1d2029;
+  --switchSpinner: white;
+  --switch: #5f616d;
+  --dark :  #252b43;
+}
+.wrapper {
+  padding: 0 20px;
+ 
+}
+
+.grid {
+  display:grid;
+  grid-row-gap:25px
+}
+/* header */
+.header{
+  background:var(--lightGray) ;
+  margin: 0  20px;
+  padding:10px 0 70px 10px;
+  text-align: left;
+}
+.header p {
+  margin :0;
+  font-size:12px;
+  color:var(--gray);
+  border-bottom: 2px solid var(--switch);
+  padding-bottom: 15px;
+
+}
+.header h1 {
+  margin:0;
+  font-size: 1.4em;
+}
+
+
+/* card */
+.card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color1);
+  text-align: center;
+}
+.card.facebook:before {
+  content: "";
+  height: 4px;
+  display: block;
+  background: var(--facebook);
+}
+
+.card.twitter:before {
+  content: "";
+  height: 4px;
+  display: block;
+  background: var(--twitter);
+}
+
+.card.instagram:before {
+  content: "";
+  height: 4px;
+  display: block;
+  background: linear-gradient(to right, red 0%,  blue 100%)
+}
+
+.card.youtube:before {
+  content: "";
+  height: 4px;
+  display: block;
+  background: var(--youTube);
+}
+
+.card-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-title img{
+  margin-right: 5px;
+  
+}
+
+.card-title span{
+ font-size: 11px;
+ color:var(--cardTitle)
+}
+
+
+
+.card-follower-number {
+  font-size: 50px;
+  font-weight: 700;
+  display: block;
+}
+
+.card-follower-title {
+  color: var(--gray);
+  text-transform: uppercase;
+  font-size:.8em;
+  letter-spacing: 5px;
+}
+
+.card-today {
+  color:var(--lime-green);
+  font-size:.8em;
+  padding-bottom: 5px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-today img {
+  margin-right: 3px;
+}
+
+.overview {
+  margin:20px 0;
+}
+
+.overview h2 {
+  padding:15px 0 5px 0;
+  color:var(--gray);
+  font-size: 1.3em;
+}
+
+.card-small {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: var(--color1);
+  grid-row-gap:10px;
+  padding:1.5em;
+  border-radius: 10px;
+  margin-bottom: 10px;
+ 
+}
+.card-small p  {
+  margin: 0;
+}
+
+.card-small-views{
+
+  font-size: 11px;
+  color:var(--gray)
+}
+
+.card-small-icon{
+  text-align: right;
+}
+
+.card-small-number {
+  font-size: 30px;
+  line-height: .9;
+
+}
+
+.card-small-percentage {
+  font-size: 15px;
+  text-align: right;
+  display:flex;
+  justify-content:flex-end;
+  align-items: flex-end;
+  font-weight: bold;
+  font-size: .8em;
+  color:var(--lime-green)
+}
+
+.card-small-percentage span {
+  display: flex;
+  align-items: center;
+}
+
+.card-small-percentage.is-danger {
+  color:var( --bright-red)
+}
+
+@media(min-width:600px){
+   .grid {
+     display: grid;
+     grid-template-columns: repeat(2,1fr);
+     grid-column-gap:10px;
+   }
+   
+   .wrapper {
+    margin-bottom:20px;
+  }
+  .header {
+    margin: 0 20px 20px 20px;
+  }
+ 
+  }
+
+@media(min-width:1024px){
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-column-gap:10px;
+   
+  }
+  .wrapper {
+    width:80%;
+    margin:0 auto;
+  }
+  .header {
+    width:79%;
+    margin: 20px auto;
+  }
+}
+
+
+@media (color-index: 70) { /* prefers-color-scheme: light */
+  body {
+    background-color: white;
+    color: black;
+  }
+
+}
+
+
+@media (color-index: 48) { /* prefers-color-scheme: dark */
+  body {
+    background-color:var(--baseColor);
+    color: #fff;
+  }
+
+  .header {
+    background-color:var(--baseColor)
+  }
+
+  .card {
+    background-color: var(--dark)
+  }
+
+  .card-small {
+    background-color:var(--dark)
+  }
+}
