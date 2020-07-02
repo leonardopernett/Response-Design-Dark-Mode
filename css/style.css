@@ -261,7 +261,18 @@ body {
   .header {
     width:79%;
     margin: 20px auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
   }
+
+  .mode {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 160px;
+  }
+  
 }
 
 
